@@ -13,7 +13,7 @@ import java.util.List;
 @DiscriminatorColumn(name = "TYPE" ,length = 2)
 @Data @NoArgsConstructor
 @AllArgsConstructor
-public class BankAccount {
+public abstract class BankAccount {
     @Id
     private String id;
     private double balance;

@@ -21,7 +21,7 @@ public class BackendApplication {
     public static void main(String[] args) {
         SpringApplication.run(BackendApplication.class, args);
     }
-    @Bean
+   // @Bean
     CommandLineRunner start (CustomerRepository customerRepository, BankAccountRepository bankAccountRepository, AccountOperationRepository accountOperationRepository){
         return args -> {
             Stream.of("Hassan","Yassin","Aicha").forEach(name -> {
@@ -57,6 +57,7 @@ public class BackendApplication {
                     accountOperation.setAmount(Math.random()*12000);
                     accountOperation.setType(Math.random()>0.5? OperationType.CREDIT : OperationType.DEBIT);
                     accountOperation.setBankAccount(bankAccount);
+                    accountOperation.setDescription("Operation "+accountOperation.getType());
                     accountOperationRepository.save(accountOperation);
                 };
             });
