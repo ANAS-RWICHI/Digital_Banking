@@ -3,6 +3,6 @@ package org.example.backend.dtos;
 import lombok.Data;
 
 @Data
-public class BankAccountDto {
+public abstract class BankAccountDto {
     private String type;
 }
